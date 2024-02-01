@@ -1,3 +1,10 @@
+#added files by me
+*.csv
+*.pdf
+project_requirements.txt
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
