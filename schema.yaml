@@ -1,1 +1,9 @@
-key : Value
+COLUMNS:
+    ID: int64
+    Sex: int64
+    Marital status: int64
+    Age: int64
+    Education: int64
+    Income: int64
+    Occupation: int64
+    Settlement size: int64

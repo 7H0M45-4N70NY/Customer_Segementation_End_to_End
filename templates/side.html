@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Customer Segmentation</title>
+</head>
+<body>
+    <h1>Customer Segmentation</h1>
+    <form action="/predict" method="post">
+        <!-- Your input fields here -->
+        <label for="input_feature">Input Feature:</label>
+        <input type="text" name="input_feature" required>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+        <p>Prediction: {{ prediction }}</p>
+        <!-- Add option to insert into database -->
+        <form action="/insert" method="post">
+            <input type="hidden" name="input_feature" value="{{ input_feature }}">
+            <input type="hidden" name="prediction" value="{{ prediction }}">
+            <button type="submit">Insert into Database</button>
+        </form>
+    {% endif %}
+</body>
+</html>

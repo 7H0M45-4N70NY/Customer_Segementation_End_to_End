@@ -1,0 +1,16 @@
+#header1{
+    color:green;
+}
+
+h1 {
+    color:red;
+}
+
+a{
+    background-color: grey;
+    color:blue;
+}
+
+.navigation{
+    margin:2px;
+}

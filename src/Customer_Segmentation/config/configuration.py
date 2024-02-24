@@ -1,5 +1,5 @@
 from Customer_Segmentation.constants import *
-from Customer_Segmentation.entity.config_entity import (DataIngestionConfig)
+from Customer_Segmentation.entity.config_entity import (DataIngestionConfig,DataValidationConfig)
 from Customer_Segmentation.utils.common import read_yaml,create_directories
 
 class ConfigurationManager:
@@ -25,3 +25,16 @@ class ConfigurationManager:
             download_path=config.download_path
         )
         return data_ingestion_config
+    
+    def get_data_validation_config(self) -> DataValidationConfig:
+        config=self.config.data_validation
+        schema=self.schema.COLUMNS
+        create_directories([config.root_dir])
+        data_validation_config=DataValidationConfig(
+            root_dir=config.root_dir,
+            target_file=config.target_file,
+            result_path=config.result_path,
+            all_schema=schema
+        )
+        return data_validation_config
+    

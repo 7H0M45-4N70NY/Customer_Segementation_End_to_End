@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web App</title>
+    <link rel="stylesheet" href='static/style.css'>
+</head>
+<body>
+    <nav class="naviagetion bar" id="single_nav">
+        <div class="container px4">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                      <li class="nav-item"> <a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+        </div>
+    </nav>
+
+
+    <h2>Form</h2>
+
+    <form action="{{url_for('predict_datapoint')}}" method="POST">
+        <div class="form-group">
+            <label for="Age">Age:</label>
+            <input type="text" id="Age" name="Age" placeholder="Enter Age value (float)">
+        </div>
+        <div class="form-group">
+            <label for="Income">Income:</label>
+            <input type="text" id="Income" name="Income" placeholder="Enter Income value (float)">
+        </div>
+        <div class="form-group">
+            <label for="marital_status">Marital Status:</label>
+            <select id="marital_status" name="marital_status">
+                <option value="Single">Single</option>
+                <iption value="Married">Married</iption>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="marital_status">Education:</label>
+            <select id="Education" name="Education">
+                <option value="12">12</option>
+                <option value="Bachelors">Bachelors</option>
+                <option value="Masters">Masters</option>
+                <option value="Phd">Phd</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Occupation">Occupation:</label>
+            <select id="Occupation" name="Occupation">
+                <option value="Unskilled">Unskilled</option>
+                <option value="Skilled">Skilled</option>
+                <option value="Manager">Manager</option>
+                <option value="Business">Business Owner</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Settlement">Settlement size':</label>
+            <select id="Settlement" name="Settlement">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
+        </div>
+    </form>
+
+
+    
+</body>
