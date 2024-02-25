@@ -1,5 +1,6 @@
 from Customer_Segmentation.constants import *
-from Customer_Segmentation.entity.config_entity import (DataIngestionConfig,DataValidationConfig)
+from Customer_Segmentation.entity.config_entity import (DataIngestionConfig,DataValidationConfig,
+                                                        DataTransfomrationConfig,ModelTrainingConfig)
 from Customer_Segmentation.utils.common import read_yaml,create_directories
 
 class ConfigurationManager:
@@ -37,4 +38,30 @@ class ConfigurationManager:
             all_schema=schema
         )
         return data_validation_config
+    def get_data_transfomration_config(self)->DataTransfomrationConfig:
+        config=self.config.data_transformation
+        params=self.params.PCA
+        create_directories([config.root_dir])
+        data_transformation_config=DataTransfomrationConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+            n_components=params.n_components,
+            random_state=params.random_state
+        )
+        return data_transformation_config
+        
+    def get_model_training_config(self)->ModelTrainingConfig:
+        config=self.config.model_training
+        params=self.params.KMeans
+        create_directories([config.root_dir])
+        model_training_config=ModelTrainingConfig(
+            root_dir=config.root_dir,
+            train_data_path=config.train_data_path,
+            model_name=config.model_name,
+            n_clusters=params.n_clusters,
+            random_state=params.random_state,
+            max_iter=params.max_iter,
+            tol=params.tol
+        )
+        return model_training_config
     

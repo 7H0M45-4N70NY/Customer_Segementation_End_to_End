@@ -12,5 +12,6 @@ Flask
 joblib
 boto3
 python-dotenv
+dvc-s3
 
 -e .

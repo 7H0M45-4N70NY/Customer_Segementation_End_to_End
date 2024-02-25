@@ -1,1 +1,9 @@
-key: Value
+PCA:
+  n_components: 0.80
+  random_state: 64
+
+KMeans:
+    n_clusters: 4
+    random_state: 42
+    max_iter: 1000
+    tol: 0.0001
