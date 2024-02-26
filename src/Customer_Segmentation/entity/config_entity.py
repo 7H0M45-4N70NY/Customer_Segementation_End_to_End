@@ -31,3 +31,11 @@ class ModelTrainingConfig:
     random_state:42
     max_iter:1000
     tol:float
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_data_path: Path
+    model_path: Path
+    metric_file_name: Path
+    

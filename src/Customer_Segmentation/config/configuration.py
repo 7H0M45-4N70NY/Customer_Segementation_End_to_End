@@ -1,6 +1,7 @@
 from Customer_Segmentation.constants import *
 from Customer_Segmentation.entity.config_entity import (DataIngestionConfig,DataValidationConfig,
-                                                        DataTransfomrationConfig,ModelTrainingConfig)
+                                                        DataTransfomrationConfig,ModelTrainingConfig,
+                                                        ModelEvaluationConfig)
 from Customer_Segmentation.utils.common import read_yaml,create_directories
 
 class ConfigurationManager:
@@ -64,4 +65,15 @@ class ConfigurationManager:
             tol=params.tol
         )
         return model_training_config
+    
+    def get_model_evaluation_config(self)->ModelEvaluationConfig:
+        config=self.config.model_evaluation
+        create_directories([config.root_dir])
+        model_evaluation_config=ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_data_path=config.test_data_path,
+            model_path=config.model_path,
+            metric_file_name=config.metric_file_name
+        )   
+        return model_evaluation_config 
     
