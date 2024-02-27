@@ -9,31 +9,38 @@
         <div class="container px4">
             <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                      <li class="nav-item"> <a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                      <li class="nav-item"> <a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('index')}}">Home</a></li>
         </div>
     </nav>
 
 
     <h2>Form</h2>
 
-    <form action="{{url_for('predict_datapoint')}}" method="POST">
+    <form action="{{url_for('predict')}}" method="POST">
         <div class="form-group">
             <label for="Age">Age:</label>
-            <input type="text" id="Age" name="Age" placeholder="Enter Age value (float)">
+            <input type="text" id="Age" name="Age" placeholder="Enter Age value (float)" min="18" max="80">
         </div>
         <div class="form-group">
             <label for="Income">Income:</label>
-            <input type="text" id="Income" name="Income" placeholder="Enter Income value (float)">
+            <input type="text" id="Income" name="Income" placeholder="Enter Income value (float)" min="1000" max ="10000000">
         </div>
         <div class="form-group">
             <label for="marital_status">Marital Status:</label>
             <select id="marital_status" name="marital_status">
                 <option value="Single">Single</option>
-                <iption value="Married">Married</iption>
+                <option value="Married">Married</iption>
             </select>
         </div>
         <div class="form-group">
-            <label for="marital_status">Education:</label>
+            <label for="Sex">Sex:</label>
+            <select id="Sex" name="Sex">
+                <option value="Female">Female</option>
+                <option value="Male">Male</iption>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Education">Education:</label>
             <select id="Education" name="Education">
                 <option value="12">12</option>
                 <option value="Bachelors">Bachelors</option>
@@ -44,7 +51,6 @@
         <div class="form-group">
             <label for="Occupation">Occupation:</label>
             <select id="Occupation" name="Occupation">
-                <option value="Unskilled">Unskilled</option>
                 <option value="Skilled">Skilled</option>
                 <option value="Manager">Manager</option>
                 <option value="Business">Business Owner</option>
@@ -58,6 +64,8 @@
                 <option value="Large">Large</option>
             </select>
         </div>
+        <div style="clear:both;"></div>
+        <input type="submit" value="Submit">
     </form>
 
 
