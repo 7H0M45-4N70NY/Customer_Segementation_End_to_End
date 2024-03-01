@@ -33,6 +33,15 @@ class PredictionPipeline:
             return prediction
         except Exception as e:
             raise customexception(e,sys)
+    def predict_bulk(self,data):
+        try:
+            order=['Sex', 'Marital status', 'Age', 'Education', 
+                   'Income','Occupation', 'Settlement size']
+            transformed_data=self.preprocessor.transform(data[order])
+            prediction=self.model.predict(transformed_data)
+            return prediction
+        except Exception as e:
+            raise customexception(e,sys)
 class CustomData:
     def __init__(self,Age:int,Income:int,marital_status:str,Education:str,Occupation:str,Settlement:str,Sex:str):
         self.Age=Age

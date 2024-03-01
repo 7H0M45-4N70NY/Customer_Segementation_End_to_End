@@ -12,6 +12,8 @@ Flask
 joblib
 boto3
 python-dotenv
-dvc-s3
+# dvc-s3
+#psycopg2==2.9.9
+#tablib==3.5.0
 
 -e .

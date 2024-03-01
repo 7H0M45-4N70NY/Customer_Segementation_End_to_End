@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,jsonify
 import os
 import numpy as np
 import pandas as pd
@@ -38,7 +38,6 @@ def predict():
     else:
         return render_template('single.html')
 
-
-
+# Other routes and functions...
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", port = 8080,debug=True)
